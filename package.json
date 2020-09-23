@@ -1,0 +1,28 @@
+{
+  "name": "image-shrink",
+  "productName": "ImageShrink",
+  "version": "1.0.0",
+  "description": "Optimize images",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "nodemon --exec electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . --overwrite --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=false --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"ImageShrink\"",    
+    "package-linux": "electron-packager . --overwrite --platform=linux --arch=x64 --icon=assets/icons/linux/icon.png --prune=false --out=release-builds"
+  },
+  "author": "Daniel Ramirez",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^10.1.2",
+    "electron-packager": "^15.1.0",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "electron-log": "^4.2.4",
+    "imagemin": "^7.0.1",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-pngquant": "^9.0.1",
+    "slash": "^3.0.0"
+  }
+}
